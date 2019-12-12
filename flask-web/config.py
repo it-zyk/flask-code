@@ -6,7 +6,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     FLASKY_MAIL_SUBJECT_PREFIX = '[张永奎]'
-    FLASKY_MAIL_SENDER = 'zhangykgwy@qq.com'
+    FLASKY_MAIL_SENDER = '张永奎<zhangykgwy@qq.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     MAIL_SERVER = 'smtp.qq.com'
     MAIL_PORT = 465
