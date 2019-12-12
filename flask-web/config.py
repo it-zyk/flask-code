@@ -15,7 +15,6 @@ class Config:
     MAIL_USERNAME = 'zhangykgwy@qq.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     FLASKY_ADMIN = 'zyk@cntcc.cn'
-
     # 每页显示的记录数量
     FLASKY_POSTS_PER_PAGE = 5
     FLASKY_FOLLOWERS_PER_PAGE = 50
@@ -37,8 +36,6 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
-    # 为了避免在测试中处理CSRF令牌这一烦琐操作，最好在测试配置中禁用CSRF保护功能
-    WTF_CSRF_ENABLED = False
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \

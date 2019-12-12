@@ -3,70 +3,36 @@ from flask import render_template, session, redirect, url_for, flash, request,\
     current_app, make_response
 from flask_login import login_required, current_user
 from . import main
-from .forms import NameForm, EditProfileForm, PostForm, CommentForm, EditProfileAdminForm
+from .forms import NameForm, EditProfileForm, PostForm, CommentForm
 from .. import db
 from ..models import User, Permission, Post, Comment
 from ..decorators import admin_required, permission_required
 
 
-@main.route('/shutdown')
-def server_shutdown():
-    # 关闭服务器路由
-    if not current_app.testing:
-        abort(404)
-    shutdown = request.environ.get('werkzeug.server.shutdown')
-    if not shutdown:
-        abort(500)
-    shutdown()
-    return 'Shutting down...'
+# @main.route('/', methods=['GET', 'POST'])
+# def index():
+#     form = NameForm()
+#     if form.validate_on_submit():
+#         # ...
+#         return redirect(url_for('.index'))
+#     return render_template('index.html',
+#                            form=form, name=session.get('name'),
+#                            known=session.get('known', False),
+#                            current_time=datetime.utcnow())
 
-
-@main.route('/post/<int:id>', methods=['GET', 'POST'])
-def post(id):
-    post = Post.query.get_or_404(id)
-    form = CommentForm()
-    if form.validate_on_submit():
-        comment = Comment(body=form.body.data,
-                          post=post,
-                          author=current_user._get_current_object())
-        db.session.add(comment)
-        db.session.commit()
-        flash('Your comment has been published.')
-        return redirect(url_for('.post', id=post.id, page=-1))
-    page = request.args.get('page', 1, type=int)
-    if page == -1:
-        page = (post.comments.count() - 1) // \
-            current_app.config['FLASKY_COMMENTS_PER_PAGE'] + 1
-    pagination = post.comments.order_by(Comment.timestamp.asc()).paginate(
-        page, per_page=current_app.config['FLASKY_COMMENTS_PER_PAGE'],
-        error_out=False)
-    comments = pagination.items
-    return render_template('post.html', posts=[post], form=form,
-                           comments=comments, pagination=pagination)
-
-
-@main.route('/edit/<int:id>', methods=['GET', 'POST'])
-@login_required
-def edit(id):
-    '''编辑博客链接edit_post'''
-    post = Post.query.get_or_404(id)
-    if current_user != post.author and not current_user.can(Permission.ADMINISTER):
-        abort(403)
-    form = PostForm()
-    if form.validate_on_submit():
-        post.body = form.body.data
-        db.session.add(post)
-        flash('The post has been updated.')
-        return redirect(url_for('.post', id=post.id))
-    form.body.data = post.body
-    return render_template('edit_post.html', form=form)
-
-
-@main.route('/admin')
-@login_required
-@admin_required
-def for_admins_only():
-    return "For administrators!"
+# @main.route('/', methods=['GET', 'POST'])
+# def index():
+#     form = PostForm()
+#     if current_user.can(Permission.WRITE) and \
+#             form.validate_on_submit():
+#         post = Post(body=form.body.data,
+#                     author=current_user._get_current_object())
+#         db.session.add(post)
+#         db.session.commit()
+#         return redirect(url_for('.index'))
+#     pos = Post.query.order_by(Post.timestamp.desc()).all()
+#     return render_template('index.html', form=form, posts=pos, pagination=False)
+#
 
 
 @main.route('/moderate')
@@ -80,6 +46,30 @@ def moderate():
     comments = pagination.items
     return render_template('moderate.html', comments=comments,
                            pagination=pagination, page=page)
+
+
+@main.route('/moderate/enable/<int:id>')
+@login_required
+@permission_required(Permission.MODERATE)
+def moderate_enable(id):
+    comment = Comment.query.get_or_404(id)
+    comment.disabled = False
+    db.session.add(comment)
+    db.session.commit()
+    return redirect(url_for('.moderate',
+                            page=request.args.get('page', 1, type=int)))
+
+
+@main.route('/moderate/disable/<int:id>')
+@login_required
+@permission_required(Permission.MODERATE)
+def moderate_disable(id):
+    comment = Comment.query.get_or_404(id)
+    comment.disabled = True
+    db.session.add(comment)
+    db.session.commit()
+    return redirect(url_for('.moderate',
+                            page=request.args.get('page', 1, type=int)))
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -111,13 +101,70 @@ def index():
 
 @main.route('/user/<username>')
 def user(username):
-    # 用户资料页面的路由
-    user = User.query.filter_by(username=username).first()
-    if user is None:
-        abort(404)
-    # 获取博客文章的资料页路由
-    posts = user.posts.order_by(Post.timestamp.desc()).all()
-    return render_template('user.html', user=user, posts=posts)
+    user = User.query.filter_by(username=username).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    pagination = user.posts.order_by(Post.timestamp.desc()).paginate(
+        page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'],
+        error_out=False)
+    posts = pagination.items
+    return render_template('user.html', user=user, posts=posts,
+                           pagination=pagination)
+
+
+@main.route('/edit/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit(id):
+    '''编辑博客链接edit_post'''
+    post = Post.query.get_or_404(id)
+    if current_user != post.author and \
+            not current_user.can(Permission.ADMINISTER):
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.body = form.body.data
+        db.session.add(post)
+        flash('The post has been updated.')
+        return redirect(url_for('.post', id=post.id))
+    form.body.data = post.body
+    return render_template('edit_post.html', form=form)
+
+
+@main.route('/post/<int:id>', methods=['GET', 'POST'])
+def post(id):
+    post = Post.query.get_or_404(id)
+    form = CommentForm()
+    if form.validate_on_submit():
+        comment = Comment(body=form.body.data,
+                          post=post,
+                          author=current_user._get_current_object())
+        db.session.add(comment)
+        db.session.commit()
+        flash('Your comment has been published.')
+        return redirect(url_for('.post', id=post.id, page=-1))
+    page = request.args.get('page', 1, type=int)
+    if page == -1:
+        page = (post.comments.count() - 1) // \
+            current_app.config['FLASKY_COMMENTS_PER_PAGE'] + 1
+    pagination = post.comments.order_by(Comment.timestamp.asc()).paginate(
+        page, per_page=current_app.config['FLASKY_COMMENTS_PER_PAGE'],
+        error_out=False)
+    comments = pagination.items
+    return render_template('post.html', posts=[post], form=form,
+                           comments=comments, pagination=pagination)
+
+
+@main.route('/admin')
+@login_required
+@admin_required
+def for_admins_only():
+    return "For administrators!"
+
+
+@main.route('/moderator')
+@login_required
+@permission_required(Permission.MODERATE)
+def for_moderators_only():
+    return "For comment moderators!"
 
 
 @main.route('/edit-profile', methods=['GET', 'POST'])
@@ -176,7 +223,25 @@ def follow(username):
         flash('You are already following this user.')
         return redirect(url_for('.user', username=username))
     current_user.follow(user)
+    db.session.commit()
     flash('You are now following %s.' % username)
+    return redirect(url_for('.user', username=username))
+
+
+@main.route('/unfollow/<username>')
+@login_required
+@permission_required(Permission.FOLLOW)
+def unfollow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('Invalid user.')
+        return redirect(url_for('.index'))
+    if not current_user.is_following(user):
+        flash('You are not following this user.')
+        return redirect(url_for('.user', username=username))
+    current_user.unfollow(user)
+    db.session.commit()
+    flash('You are not following %s anymore.' % username)
     return redirect(url_for('.user', username=username))
 
 
@@ -228,20 +293,3 @@ def show_followed():
     resp = make_response(redirect(url_for('.index')))
     resp.set_cookie('show_followed', '1', max_age=30 * 24 * 60 * 60)
     return resp
-
-
-@main.route('/unfollow/<username>')
-@login_required
-@permission_required(Permission.FOLLOW)
-def unfollow(username):
-    user = User.query.filter_by(username=username).first()
-    if user is None:
-        flash('Invalid user.')
-        return redirect(url_for('.index'))
-    if not current_user.is_following(user):
-        flash('You are not following this user.')
-        return redirect(url_for('.user', username=username))
-    current_user.unfollow(user)
-    db.session.commit()
-    flash('You are not following %s anymore.' % username)
-    return redirect(url_for('.user', username=username))
