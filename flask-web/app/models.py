@@ -5,7 +5,12 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app, request
 from werkzeug.security import generate_password_hash, check_password_hash
 
+from markdown import markdown
+import bleach
+from flask import current_app, request, url_for
 from flask_login import UserMixin, AnonymousUserMixin
+from app.exceptions import ValidationError
+
 from . import login_manager
 
 
@@ -293,8 +298,7 @@ class Post(db.Model):
                         'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul',
                         'h1', 'h2', 'h3', 'p']
         target.body_html = bleach.linkify(bleach.clean(
-            markdown(value, output_format='html'),
-            tags=allowed_tags, strip=True))
+            markdown(value, output_format='html'), tags=allowed_tags, strip=True))
 
     def __repr__(self):
         return '<Post %r>' % self.body
