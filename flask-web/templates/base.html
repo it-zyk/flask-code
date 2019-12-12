@@ -1,14 +1,12 @@
 {% extends "bootstrap/base.html" %}
 
-
-{% block title %}Flasky{% endblock %}
-
-<!-- 定义收藏夹 -->
 {% block head %}
 {{ super() }}
 <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon">
 <link rel="icon" href="{{ url_for('static', filename = 'favicon.ico') }}" type="image/x-icon">
 {% endblock %}
+
+{% block title %}Flasky{% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
@@ -33,6 +31,7 @@
 
 {% block content %}
 <div class="container">
+  <!-- Flask把get_flashed_messages()函数开放给模板，用来获取并渲染消息 -->
   {% for message in get_flashed_messages() %}
   <div class="alert alert-warning">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -42,9 +41,4 @@
 
   {% block page_content %}{% endblock %}
 </div>
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ moment.include_moment() }}
 {% endblock %}
