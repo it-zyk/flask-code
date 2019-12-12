@@ -6,15 +6,16 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     FLASKY_MAIL_SUBJECT_PREFIX = '[张永奎]'
-    FLASKY_MAIL_SENDER = '张永奎<lustyle2010@163.com>'
+    FLASKY_MAIL_SENDER = 'zhangykgwy@qq.com'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
-    MAIL_SERVER = 'smtp.163.com'
-    MAIL_PORT = 25
+    MAIL_SERVER = 'smtp.qq.com'
+    MAIL_PORT = 465
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False
-    MAIL_USERNAME = 'lustyle2010@163.com'
+    MAIL_USERNAME = 'zhangykgwy@qq.com'
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     FLASKY_ADMIN = 'zyk@cntcc.cn'
+
     # 每页显示的记录数量
     FLASKY_POSTS_PER_PAGE = 5
     FLASKY_FOLLOWERS_PER_PAGE = 50

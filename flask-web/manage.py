@@ -57,5 +57,5 @@ def test(coverage=False):
 
 
 if __name__ == '__main__':
-    manager.run(host='0.0.0.0', debug=True)
-    # app.run(debug=True)
+    # manager.run()
+    app.run(debug=True)
