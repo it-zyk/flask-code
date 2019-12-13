@@ -7,6 +7,7 @@ import redis
 import logging
 from flask_wtf import CSRFProtect
 from logging.handlers import RotatingFileHandler
+from ihome.utils.commons import ReConverter
 
 # 数据库
 db = SQLAlchemy()
@@ -65,5 +66,5 @@ def create_app(config_name):
     # # 注册静态文件蓝图
     from ihome import web_html
     app.register_blueprint(web_html.html)
-    
+
     return app
