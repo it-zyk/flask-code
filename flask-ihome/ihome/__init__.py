@@ -40,11 +40,11 @@ def create_app(config_name):
     CSRFProtect(app)
 
     # 为flask 添加自定义转换器
-    app.url_map.converters["re"] = ReConverter
+    # app.url_map.converters["re"] = ReConverter
 
     # 注册蓝图
-    # from ihome import api_1_0
-    # app.register_blueprint(api_1_0.api, url_prefix="/api/v1.0")
+    from ihome import api_1_0
+    app.register_blueprint(api_1_0.api, url_prefix="/api/v1.0")
     #
     # # 注册静态文件蓝图
     # from ihome import web_html
