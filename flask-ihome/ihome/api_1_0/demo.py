@@ -1,6 +1,7 @@
 
 from . import api
 import logging
+from ihome import db, models
 from flask import current_app
 
 
