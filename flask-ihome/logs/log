@@ -1,0 +1,38 @@
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+ERROR demo.py:9 error msg
+WARNING demo.py:10 warn msg
+WARNING demo.py:11 warn msg
+INFO demo.py:12 info msg
+DEBUG demo.py:13 debug msg
+INFO _internal.py:122 127.0.0.1 - - [13/Dec/2019 23:06:59] "GET /api/v1.0/index HTTP/1.1" 200 -
+ERROR demo.py:9 error msg
+WARNING demo.py:10 warn msg
+WARNING demo.py:11 warn msg
+INFO demo.py:12 info msg
+DEBUG demo.py:13 debug msg
+INFO _internal.py:122 127.0.0.1 - - [13/Dec/2019 23:07:02] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:04:25] "GET / HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:04:26] "GET /favicon.ico HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:04:54] "GET //api/v1.0/ HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:05:11] "GET //api/v1.0/index HTTP/1.1" 404 -
+ERROR demo.py:9 error msg
+WARNING demo.py:10 warn msg
+WARNING demo.py:11 warn msg
+INFO demo.py:12 info msg
+DEBUG demo.py:13 debug msg
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:05:17] "GET /api/v1.0/index HTTP/1.1" 200 -
