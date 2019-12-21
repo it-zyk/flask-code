@@ -303,6 +303,25 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post %r>' % self.body
 
+    def to_json(self):
+        json_post = {
+            'url': url_for('api.get_post', id=self.id),
+            'body': self.body,
+            'body_html': self.body_html,
+            'timestamp': self.timestamp,
+            'author_url': url_for('api.get_user', id=self.author_id),
+            'comments_url': url_for('api.get_post_comments', id=self.id),
+            'comment_count': self.comments.count()
+        }
+        return json_post
+
+    @staticmethod
+    def from_json(json_post):
+        body = json_post.get('body')
+        if body is None or body == '':
+            raise ValidationError('post does not have a body')
+        return Post(body=body)
+
 
 db.event.listen(Post.body, 'set', Post.on_changed_body)
 
