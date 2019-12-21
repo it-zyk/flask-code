@@ -36,3 +36,57 @@ WARNING demo.py:11 warn msg
 INFO demo.py:12 info msg
 DEBUG demo.py:13 debug msg
 INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:05:17] "GET /api/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/html/index.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/swiper/css/swiper.min.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/css/ihome/main.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/css/ihome/index.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/images/logo@128x59.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/images/home01.jpg HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/js/template.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/swiper/js/swiper.jquery.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:04] "GET /static/plugins/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:05] "GET /static/js/ihome/index.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:05] "GET /static/images/home02.jpg HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:05] "GET /static/images/home03.jpg HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:05] "GET /static/plugins/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:14] "GET /login.html HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 21:27:18] "GET /register.html HTTP/1.1" 404 -
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-ihome/ihome/__init__.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:09] "GET / HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:13] "GET /register.html HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:13] "GET /static/css/ihome/register.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:13] "GET /static/js/ihome/register.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:13] "GET /api/v1.0/image_codes/05c2cd1a-59a2-4a00-8d9b-3843f479a6fa HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:18] "GET /api/v1.0/image_codes/9f18247b-8db5-43d5-8711-a866d6385f6e HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:19] "GET /api/v1.0/image_codes/d6a991fd-cdbf-4013-a4ea-184780e4a809 HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [16/Dec/2019 22:18:20] "GET /api/v1.0/image_codes/c60a6fd1-4cd7-4e7c-a754-4008f6944046 HTTP/1.1" 500 -
