@@ -14,22 +14,14 @@ def make_shell_context():
     return dict(app=app, db=db, User=User, Role=Role)
 
 
-@manager.command
-def test():
-    """Run the unit tests."""
-    import unittest
-    tests = unittest.TestLoader().discover('tests')
-    unittest.TextTestRunner(verbosity=2).run(tests)
+# @manager.command
+# def test():
+#     """Run the unit tests."""
+#     import unittest
+#     tests = unittest.TestLoader().discover('tests')
+#     unittest.TextTestRunner(verbosity=2).run(tests)
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
-
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template('500.html'), 500
 
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
