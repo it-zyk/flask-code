@@ -1,5 +1,5 @@
 from . import api
-# from ihome.utils.captcha.captcha import captcha
+from ihome.utils.captcha.captcha import captcha
 from ihome import redis_store, constants
 from flask import current_app, jsonify, make_response, request
 from ihome.utils.response_code import RET
