@@ -37,7 +37,7 @@ def register():
 
     # 从redis中取出短信验证码
     try:
-        real_sms_code = redis_store.get("sms_code_%s" % mobile)
+        real_sms_code = redis_store.get("sms_code_%s" % mobile).decode('utf-8')
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="读取真实短信验证码异常")
