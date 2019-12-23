@@ -1,3 +1,6 @@
+# coding:utf-8
+
+
 from . import api
 from ihome.utils.captcha.captcha import captcha
 from ihome import redis_store, constants
@@ -67,7 +70,7 @@ def get_sms_code(mobile):
     # 业务逻辑处理
     # 从redis中取出真实的图片验证码
     try:
-        real_image_code = redis_store.get("image_code_%s" % image_code_id).decode('utf-8')
+        real_image_code = redis_store.get("image_code_%s" % image_code_id)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.DBERR, errmsg="redis数据库异常")
