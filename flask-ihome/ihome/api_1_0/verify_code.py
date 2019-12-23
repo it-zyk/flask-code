@@ -86,6 +86,8 @@ def get_sms_code(mobile):
     # 与用户填写的值进行对比
     if real_image_code.lower() != image_code.lower():
         # 表示用户填写错误
+        print("real_image_code: %s" % real_image_code.lower())
+        print("image_code: %s" % image_code.lower())
         return jsonify(errno=RET.DATAERR, errmsg="图片验证码错误")
 
     # 判断对于这个手机号的操作，在60秒内有没有之前的记录，如果有，则认为用户操作频繁，不接受处理
