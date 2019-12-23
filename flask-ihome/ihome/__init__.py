@@ -14,6 +14,8 @@ db = SQLAlchemy()
 # 创建redis 连接对象
 redis_store = None
 
+# 设置日志的记录等级
+logging.basicConfig(level=logging.DEBUG)  # 调试debug级
 
 # 配置日志信息
 # 创建日志记录器，指明日志保存的路径、每个日志文件的最大大小、保存的日志文件个数上限
@@ -26,8 +28,7 @@ formatter = logging.Formatter(
 file_log_handler.setFormatter(formatter)
 # 为全局的日志工具对象（flask app使用的）添加日记录器
 logging.getLogger().addHandler(file_log_handler)
-# 设置日志的记录等级
-logging.basicConfig(level=logging.DEBUG)  # 调试debug级
+
 
 
 # 工厂模式
