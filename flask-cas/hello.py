@@ -5,12 +5,12 @@ from flask_cas import login
 from flask_cas import logout
 
 app = Flask(__name__)
-cas = CAS(app, '/cas')
+
 app.config['CAS_SERVER'] = 'https://cas.china-tcc.com'
 app.config['CAS_AFTER_LOGIN'] = 'root'
 
 app.config['SECRET_KEY'] = "KAEJF34KAK12344DFJAI"
-
+cas = CAS(app, '/cas')
 
 @app.route('/')
 @login_required
