@@ -17,7 +17,7 @@ cas = CAS(app, '/cas')
 def route_root():
     return render_template(
         'layout.html',
-        username=cas.username
+        name=cas.username
     )
 
 #
