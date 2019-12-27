@@ -9,7 +9,7 @@ from ihome.utils.response_code import RET
 from ihome.models import User
 from ihome.libs.yixintong.sms import SMSSend
 import random
-from ihome.tasks.task_sms import send_sms
+# from ihome.tasks.task_sms import send_sms
 
 
 
@@ -89,8 +89,6 @@ def get_sms_code(mobile):
     # 与用户填写的值进行对比
     if real_image_code.lower() != image_code.lower():
         # 表示用户填写错误
-        print("real_image_code: %s" % real_image_code.lower())
-        print("image_code: %s" % image_code.lower())
         return jsonify(errno=RET.DATAERR, errmsg="图片验证码错误")
 
     # 判断对于这个手机号的操作，在60秒内有没有之前的记录，如果有，则认为用户操作频繁，不接受处理
@@ -122,20 +120,26 @@ def get_sms_code(mobile):
         # 保存发送给这个手机号的记录，防止用户在60s内再次出发发送短信的操作
         redis_store.setex("send_sms_code_%s" % mobile, constants.SEND_SMS_CODE_INTERVAL, 1)
     except Exception as e:
-        current_app.logger.error(e)
+        current_app.logger.error(e )
         return jsonify(errno=RET.DBERR, errmsg="保存短信验证码异常")
 
     # 发送短信
     try:
-        ccp = CCP()
-        result = ccp.send_template_sms(mobile, [sms_code, int(constants.SMS_CODE_REDIS_EXPIRES/60)], 1)
+        # 发送验证码 同步发送
+        ccp = SMSSend()
+        sms_data_info = "您的登陆验证码是：%s"  % sms_codes
+        result = ccp.send_message_info(mobile, sms_data_info)
     except Exception as e:
         current_app.logger.error(e)
         return jsonify(errno=RET.THIRDERR, errmsg="发送异常")
-
     # 返回值
     if result == 0:
         # 发送成功
         return jsonify(errno=RET.OK, errmsg="发送成功")
     else:
         return jsonify(errno=RET.THIRDERR, errmsg="发送失败")
+
+    # 利用Celery实现异步发送短信验证码
+    # sms_data_info = "您的登陆验证码是：%s" % sms_codes
+    # send_sms.delay(mobile,  sms_data_info)
+    # return jsonify(errno=RET.OK, errmsg="发送成功")
