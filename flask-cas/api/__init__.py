@@ -8,6 +8,10 @@ import logging
 from flask_wtf import CSRFProtect
 from logging.handlers import RotatingFileHandler
 # from ihome.utils.commons import ReConverter
+from flask_cas import CAS
+from flask_cas import login_required
+
+
 
 # 数据库
 db = SQLAlchemy()
@@ -30,6 +34,8 @@ file_log_handler.setFormatter(formatter)
 logging.getLogger().addHandler(file_log_handler)
 
 
+# session["name"] = mobile
+
 # 工厂模式
 def create_app(config_name):
     """
@@ -38,6 +44,7 @@ def create_app(config_name):
     :rturn:
     """
     app = Flask(__name__)
+    cas = CAS(app, '/cas')
 
     # 根据配置模式的名字获取配置参数的类：
     config_class = config_map.get(config_name)
