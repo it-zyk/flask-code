@@ -1,6 +1,6 @@
 from . import main
 from flask import current_app, render_template, session, redirect, url_for, flash
-
+from flask_cas import login_required
 
 @main.route("/user")
 @login_required
