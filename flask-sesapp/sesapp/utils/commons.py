@@ -25,11 +25,11 @@ def login_required(view_func):
         # 判断用户的登录状态
         # user_id = session.get("user_id")
         from sesapp import cas
-        username=cas.username
+        user_id=cas.username
         # 如果用户是登录的， 执行视图函数
         if username is not None:
             # 将user_id保存到g对象中，在视图函数中可以通过g对象获取保存数据
-            g.username = username
+            g.user_id = username
             return view_func(*args, **kwargs)
         else:
             # 如果未登录，返回未登录的信息
