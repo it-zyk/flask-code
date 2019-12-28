@@ -1,5 +1,5 @@
 
-from . import sesexam
+from . import exam
 import logging
 from flask import current_app, g
 from sesapp.utils.commons import login_required
