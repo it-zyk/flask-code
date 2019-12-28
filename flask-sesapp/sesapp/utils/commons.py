@@ -1,7 +1,7 @@
 from werkzeug.routing import BaseConverter
 from flask import session, jsonify, g
 from sesapp.utils.response_code import RET
-from sesapp import cas
+
 
 import functools
 
@@ -24,6 +24,7 @@ def login_required(view_func):
     def wrapper(*args, **kwargs):
         # 判断用户的登录状态
         # user_id = session.get("user_id")
+        from sesapp import cas
         username=cas.username
         # 如果用户是登录的， 执行视图函数
         if username is not None:
