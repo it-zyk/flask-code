@@ -1,7 +1,7 @@
 
 from . import exam
 import logging
-from flask import current_app, g, render_template
+from flask import g, current_app, render_template
 from sesapp.utils.commons import login_required
 
 
