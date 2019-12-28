@@ -15,6 +15,6 @@ def index():
     # current_app.logger.debug("debug msg")
     return render_template(
         'layout.html',
-        name=g.user_id
+        name=g.username
     )
     return "index page"
