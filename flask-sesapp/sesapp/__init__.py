@@ -66,7 +66,7 @@ def create_app(config_name):
     #
 
     # # 注册静态文件蓝图
-    from api import web_html
+    from sesapp import web_html
     app.register_blueprint(web_html.html)
 
     return app
