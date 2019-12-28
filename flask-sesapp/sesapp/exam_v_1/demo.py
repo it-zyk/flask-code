@@ -2,7 +2,9 @@
 from . import exam
 import logging
 from flask import g, current_app, render_template
-from sesapp.utils.commons import login_required
+#from sesapp.utils.commons import login_required
+from flask_cas import login_required
+from sesapp import cas
 
 
 @exam.route("/index")
@@ -15,6 +17,6 @@ def index():
     # current_app.logger.debug("debug msg")
     return render_template(
         'layout.html',
-        name=g.username
+        name=cas.username
     )
     return "index page"
