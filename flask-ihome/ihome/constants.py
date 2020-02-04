@@ -16,7 +16,7 @@ LOGIN_ERROR_MAX_TIMES = 5
 LOGIN_ERROR_FORBID_TIME = 600
 
 # 设置fdfs存储服务器上nginx的IP和端口号
-FDFS_URL = 'http://10.2.90.78:8888/'
+FDFS_URL = 'http://192.168.1.103:8888/'
 
 # 设置fdfs使用的client.conf文件路径
 # FDFS_CLIENT_CONF = './utils/client.conf'

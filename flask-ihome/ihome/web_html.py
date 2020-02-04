@@ -24,7 +24,7 @@ def get_html(html_file_name):
 
     # 创建一个csrf_token值
     csrf_token = csrf.generate_csrf()
-
+    # print(csrf_token)
     # flask提供的返回静态文件的方法
     resp = make_response(current_app.send_static_file(html_file_name))
 

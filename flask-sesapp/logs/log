@@ -1,0 +1,82 @@
+INFO _internal.py:122  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:52:57] "GET /exam/index HTTP/1.1" 404 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:53:36] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/exam_v_1/demo.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:06] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:06] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:06] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:06] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:07] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 19:55:07] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/utils/commons.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:00:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/exam_v_1/demo.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:38] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:38] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:39] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 20:08:39] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:30] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:09:31] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/exam_v_1/demo.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index HTTP/1.1" 500 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:14:30] "GET /exam/v1.0/index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/utils/commons.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:17:54] "GET /exam/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:17:55] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:18:19] "GET /exam/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122  * Detected change in '/home/zyk/flask-code/flask-sesapp/sesapp/exam_v_1/demo.py', reloading
+INFO _internal.py:122  * Restarting with stat
+WARNING _internal.py:122  * Debugger is active!
+INFO _internal.py:122  * Debugger PIN: 263-258-446
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:26:48] "GET /exam/v1.0/index HTTP/1.1" 302 -
+DEBUG routing.py:56 Redirecting to: https://cas.china-tcc.com/cas?service=http%3A%2F%2F127.0.0.1%3A5000%2Flogin%2F%3Forigin%3D%252Fexam%252Fv1.0%252Findex%253F
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:26:48] "GET /login/ HTTP/1.1" 302 -
+DEBUG routing.py:102 validating token ST-6548159-qo3d4RzXfQ9oY0Pn0WAB-CASServer
+DEBUG routing.py:111 Making GET request to https://cas.china-tcc.com/cas/serviceValidate?service=http%3A%2F%2F127.0.0.1%3A5000%2Flogin%2F%3Forigin%3D%252Fexam%252Fv1.0%252Findex%253F&ticket=ST-6548159-qo3d4RzXfQ9oY0Pn0WAB-CASServer
+DEBUG routing.py:124 valid
+DEBUG routing.py:56 Redirecting to: /exam/v1.0/index?
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:26:56] "GET /login/?origin=%2Fexam%2Fv1.0%2Findex%3F&ticket=ST-6548159-qo3d4RzXfQ9oY0Pn0WAB-CASServer HTTP/1.1" 302 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:26:56] "GET /exam/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:27:11] "GET /exam/v1.0/index HTTP/1.1" 200 -
+INFO _internal.py:122 127.0.0.1 - - [28/Dec/2019 21:29:02] "GET /exam/v1.0/index HTTP/1.1" 200 -
